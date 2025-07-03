@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,14 +16,21 @@ namespace MobileShopProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new UserHomePage());
 
-            UserLogin loginForm = new UserLogin();
-
-            if(loginForm.ShowDialog() == DialogResult.OK)
+            using (var userLogin = new UserLogin())
             {
-                Application.Run(new UserHomePage());
-            }    
+                if (userLogin.ShowDialog() == DialogResult.OK)
+                {
+                    if (userLogin.IsAdmin)
+                        Application.Run(new AdminHomePage());
+                    else
+                        Application.Run(new UserHomePage());
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }
