@@ -1,4 +1,4 @@
-﻿namespace MobileShopProject
+namespace MobileShopProject
 {
     partial class UserHomePage
     {
@@ -32,11 +32,13 @@
             // 
             // UserHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "UserHomePage";
-            this.Text = "UserHomePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Employee Dashboard";
             this.ResumeLayout(false);
 
         }
@@ -44,4 +46,3 @@
         #endregion
     }
 }
-

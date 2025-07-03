@@ -68,11 +68,77 @@
     <Compile Include="ConfirmDetails.Designer.cs">
       <DependentUpon>ConfirmDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddCompanyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddCompanyControl.Designer.cs">
+      <DependentUpon>AddCompanyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddEmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddEmployeeControl.Designer.cs">
+      <DependentUpon>AddEmployeeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddMobileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddMobileControl.Designer.cs">
+      <DependentUpon>AddMobileControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddModelControl.Designer.cs">
+      <DependentUpon>AddModelControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuLayoutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MenuLayoutControl.Designer.cs">
+      <DependentUpon>MenuLayoutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SaleReportDayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SaleReportDayControl.Designer.cs">
+      <DependentUpon>SaleReportDayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SaleReportRangeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SaleReportRangeControl.Designer.cs">
+      <DependentUpon>SaleReportRangeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SalesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SalesControl.Designer.cs">
+      <DependentUpon>SalesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchCustomerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchCustomerControl.Designer.cs">
+      <DependentUpon>SearchCustomerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UpdateStockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UpdateStockControl.Designer.cs">
+      <DependentUpon>UpdateStockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewStockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewStockControl.Designer.cs">
+      <DependentUpon>ViewStockControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DbHelper.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />
@@ -99,8 +165,38 @@
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddCompanyControl.resx">
+      <DependentUpon>AddCompanyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddEmployeeControl.resx">
+      <DependentUpon>AddEmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddMobileControl.resx">
+      <DependentUpon>AddMobileControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddModelControl.resx">
+      <DependentUpon>AddModelControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SaleReportDayControl.resx">
+      <DependentUpon>SaleReportDayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SaleReportRangeControl.resx">
+      <DependentUpon>SaleReportRangeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SalesControl.resx">
+      <DependentUpon>SalesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchCustomerControl.resx">
+      <DependentUpon>SearchCustomerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UpdateStockControl.resx">
+      <DependentUpon>UpdateStockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewStockControl.resx">
+      <DependentUpon>ViewStockControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
