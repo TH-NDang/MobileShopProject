@@ -1,6 +1,7 @@
 using MobileShopProject.DataAccess;
 using System;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MobileShopProject
 {
@@ -37,8 +38,16 @@ namespace MobileShopProject
 
         private void HandleLogin(string username, string password)
         {
-            // if (UserRepository.CheckLogin(username, password))
-            if (username == "user" && password == "user")
+            string query = "SELECT COUNT(*) FROM [User] WHERE UserName = @user AND Pwd = @pass";
+            SqlParameter[] parameters = {
+                new SqlParameter("@user", username),
+                new SqlParameter("@pass", password)
+            };
+
+            object result = DbHelper.ExecuteScalar(query, parameters);
+            int count = Convert.ToInt32(result);
+
+            if (count > 0)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
