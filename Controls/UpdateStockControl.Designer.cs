@@ -126,7 +126,6 @@ namespace MobileShopProject.Controls
             // txtAmount
             this.txtAmount.Location = new System.Drawing.Point(150, 187);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.ReadOnly = true;
             this.txtAmount.Size = new System.Drawing.Size(200, 22);
             this.txtAmount.TabIndex = 9;
             this.txtAmount.Text = "0.00";
@@ -138,6 +137,7 @@ namespace MobileShopProject.Controls
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             
             // UpdateStockControl
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
