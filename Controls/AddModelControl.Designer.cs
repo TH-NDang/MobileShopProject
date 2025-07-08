@@ -44,7 +44,7 @@ namespace MobileShopProject.Controls
             this.txtModelNumber = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            
+
             // lblModelID
             this.lblModelID.AutoSize = true;
             this.lblModelID.Location = new System.Drawing.Point(20, 30);
@@ -94,8 +94,9 @@ namespace MobileShopProject.Controls
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 35);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 
             // AddModelControl
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
