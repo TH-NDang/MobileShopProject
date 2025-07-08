@@ -42,8 +42,8 @@ namespace MobileShopProject.Controls
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +57,6 @@ namespace MobileShopProject.Controls
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +103,7 @@ namespace MobileShopProject.Controls
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvSales
             // 
@@ -131,7 +131,7 @@ namespace MobileShopProject.Controls
             // 
             // colSaleID
             // 
-            this.colSaleID.DataPropertyName = "SaleID";
+            this.colSaleID.DataPropertyName = "SalesId";
             this.colSaleID.HeaderText = "Sale ID";
             this.colSaleID.MinimumWidth = 6;
             this.colSaleID.Name = "colSaleID";
@@ -140,7 +140,7 @@ namespace MobileShopProject.Controls
             // 
             // colCompanyName
             // 
-            this.colCompanyName.DataPropertyName = "CompanyName";
+            this.colCompanyName.DataPropertyName = "CompName";
             this.colCompanyName.HeaderText = "Company Name";
             this.colCompanyName.MinimumWidth = 6;
             this.colCompanyName.Name = "colCompanyName";
@@ -149,7 +149,7 @@ namespace MobileShopProject.Controls
             // 
             // colModelNumber
             // 
-            this.colModelNumber.DataPropertyName = "ModelNumber";
+            this.colModelNumber.DataPropertyName = "ModelNo";
             this.colModelNumber.HeaderText = "Model Number";
             this.colModelNumber.MinimumWidth = 6;
             this.colModelNumber.Name = "colModelNumber";
@@ -158,7 +158,7 @@ namespace MobileShopProject.Controls
             // 
             // colIMEINumber
             // 
-            this.colIMEINumber.DataPropertyName = "IMEINumber";
+            this.colIMEINumber.DataPropertyName = "IMEINo";
             this.colIMEINumber.HeaderText = "IMEI Number";
             this.colIMEINumber.MinimumWidth = 6;
             this.colIMEINumber.Name = "colIMEINumber";
@@ -168,9 +168,9 @@ namespace MobileShopProject.Controls
             // colPrice
             // 
             this.colPrice.DataPropertyName = "Price";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            this.colPrice.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.colPrice.DefaultCellStyle = dataGridViewCellStyle3;
             this.colPrice.HeaderText = "Price";
             this.colPrice.MinimumWidth = 6;
             this.colPrice.Name = "colPrice";
@@ -179,9 +179,9 @@ namespace MobileShopProject.Controls
             // 
             // colSaleDate
             // 
-            this.colSaleDate.DataPropertyName = "SaleDate";
-            dataGridViewCellStyle2.Format = "d";
-            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSaleDate.DataPropertyName = "SalesDate";
+            dataGridViewCellStyle4.Format = "d";
+            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.colSaleDate.HeaderText = "Sale Date";
             this.colSaleDate.MinimumWidth = 6;
             this.colSaleDate.Name = "colSaleDate";
@@ -199,24 +199,12 @@ namespace MobileShopProject.Controls
             this.lblTotalAmount.TabIndex = 6;
             this.lblTotalAmount.Text = "Total Sale Amount from [start date] to [end date]";
             // 
-            // txtTotalAmount
-            // 
-            this.txtTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmount.Location = new System.Drawing.Point(507, 519);
-            this.txtTotalAmount.Name = "txtTotalAmount";
-            this.txtTotalAmount.ReadOnly = true;
-            this.txtTotalAmount.Size = new System.Drawing.Size(170, 26);
-            this.txtTotalAmount.TabIndex = 8;
-            this.txtTotalAmount.Text = "0.00";
-            this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(75, 522);
+            this.lblTotal.Location = new System.Drawing.Point(75, 514);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(426, 20);
             this.lblTotal.TabIndex = 7;
@@ -226,7 +214,6 @@ namespace MobileShopProject.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtTotalAmount);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.dgvSales);
@@ -244,8 +231,6 @@ namespace MobileShopProject.Controls
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.Label lblTotal;
     }
 }

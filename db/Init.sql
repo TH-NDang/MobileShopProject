@@ -67,7 +67,7 @@ GO
 CREATE TABLE Sales (
     SalesId INT PRIMARY KEY NOT NULL,
     IMEINo NVARCHAR(50) FOREIGN KEY REFERENCES Mobile(IMEINo),
-    SakesDate DATE,
+    SaleDate DATE,
     Price DECIMAL(18, 2),
     CustId INT FOREIGN KEY REFERENCES Customer(CustId)
 );

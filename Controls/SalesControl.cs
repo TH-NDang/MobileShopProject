@@ -151,12 +151,12 @@ namespace MobileShopProject.Controls
             string getSalesSql = "SELECT ISNULL(MAX(SalesId), 0) + 1 FROM Sales";
             int salesId = Convert.ToInt32(DbHelper.ExecuteScalar(getSalesSql));
             string insertSalesSql = @"
-                INSERT INTO Sales (SalesId, IMEINo, SakesDate, Price, CustId) 
-                VALUES (@SalesId, @IMEINo, @SakesDate, @Price, @CustId);";
+                INSERT INTO Sales (SalesId, IMEINo, SalesDate, Price, CustId) 
+                VALUES (@SalesId, @IMEINo, @SalesDate, @Price, @CustId);";
             int rowUpdateSales = DbHelper.ExecuteNonQuery(insertSalesSql,
                 new SqlParameter("@SalesId", salesId),
                 new SqlParameter("@IMEINo", cmbIMEI.SelectedValue),
-                new SqlParameter("@SakesDate", DateTime.Now),
+                new SqlParameter("@SalesDate", DateTime.Now),
                 new SqlParameter("@Price", txtPrice.Text),
                 new SqlParameter("@CustId", custId));
 
