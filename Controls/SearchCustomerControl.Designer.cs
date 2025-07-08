@@ -72,6 +72,7 @@ namespace MobileShopProject.Controls
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvCustomerSales
             // 
@@ -91,12 +92,12 @@ namespace MobileShopProject.Controls
             this.dgvCustomerSales.RowHeadersVisible = false;
             this.dgvCustomerSales.RowHeadersWidth = 51;
             this.dgvCustomerSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomerSales.Size = new System.Drawing.Size(643, 247);
+            this.dgvCustomerSales.Size = new System.Drawing.Size(609, 247);
             this.dgvCustomerSales.TabIndex = 4;
             // 
             // colCustomerName
             // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
+            this.colCustomerName.DataPropertyName = "CustName";
             this.colCustomerName.HeaderText = "Customer Name";
             this.colCustomerName.MinimumWidth = 6;
             this.colCustomerName.Name = "colCustomerName";
@@ -105,7 +106,7 @@ namespace MobileShopProject.Controls
             // 
             // colMobileNumber
             // 
-            this.colMobileNumber.DataPropertyName = "MobileNumber";
+            this.colMobileNumber.DataPropertyName = "MobileNo";
             this.colMobileNumber.HeaderText = "Mobile Number";
             this.colMobileNumber.MinimumWidth = 6;
             this.colMobileNumber.Name = "colMobileNumber";
@@ -114,7 +115,7 @@ namespace MobileShopProject.Controls
             // 
             // colEmail
             // 
-            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.DataPropertyName = "MailId";
             this.colEmail.HeaderText = "Email";
             this.colEmail.MinimumWidth = 6;
             this.colEmail.Name = "colEmail";
