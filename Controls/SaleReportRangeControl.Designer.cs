@@ -42,8 +42,8 @@ namespace MobileShopProject.Controls
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
@@ -57,14 +57,15 @@ namespace MobileShopProject.Controls
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtTotalAmount = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(20, 30);
+            this.lblStartDate.Location = new System.Drawing.Point(243, 61);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(69, 16);
             this.lblStartDate.TabIndex = 0;
@@ -73,7 +74,7 @@ namespace MobileShopProject.Controls
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(20, 70);
+            this.lblEndDate.Location = new System.Drawing.Point(243, 101);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(66, 16);
             this.lblEndDate.TabIndex = 1;
@@ -82,24 +83,24 @@ namespace MobileShopProject.Controls
             // dtpStartDate
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(100, 27);
+            this.dtpStartDate.Location = new System.Drawing.Point(323, 58);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(150, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(203, 22);
             this.dtpStartDate.TabIndex = 2;
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(100, 67);
+            this.dtpEndDate.Location = new System.Drawing.Point(323, 98);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(150, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(203, 22);
             this.dtpEndDate.TabIndex = 3;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(270, 45);
+            this.btnSearch.Location = new System.Drawing.Point(547, 70);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 25);
+            this.btnSearch.Size = new System.Drawing.Size(153, 38);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -119,13 +120,13 @@ namespace MobileShopProject.Controls
             this.colIMEINumber,
             this.colPrice,
             this.colSaleDate});
-            this.dgvSales.Location = new System.Drawing.Point(20, 110);
+            this.dgvSales.Location = new System.Drawing.Point(79, 162);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
             this.dgvSales.RowHeadersVisible = false;
             this.dgvSales.RowHeadersWidth = 51;
             this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSales.Size = new System.Drawing.Size(1325, 648);
+            this.dgvSales.Size = new System.Drawing.Size(783, 319);
             this.dgvSales.TabIndex = 5;
             // 
             // colSaleID
@@ -167,9 +168,9 @@ namespace MobileShopProject.Controls
             // colPrice
             // 
             this.colPrice.DataPropertyName = "Price";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            this.colPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            this.colPrice.DefaultCellStyle = dataGridViewCellStyle1;
             this.colPrice.HeaderText = "Price";
             this.colPrice.MinimumWidth = 6;
             this.colPrice.Name = "colPrice";
@@ -179,8 +180,8 @@ namespace MobileShopProject.Controls
             // colSaleDate
             // 
             this.colSaleDate.DataPropertyName = "SaleDate";
-            dataGridViewCellStyle4.Format = "d";
-            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "d";
+            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.colSaleDate.HeaderText = "Sale Date";
             this.colSaleDate.MinimumWidth = 6;
             this.colSaleDate.Name = "colSaleDate";
@@ -192,25 +193,41 @@ namespace MobileShopProject.Controls
             this.lblTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(20, 778);
+            this.lblTotalAmount.Location = new System.Drawing.Point(20, 728);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(418, 20);
             this.lblTotalAmount.TabIndex = 6;
             this.lblTotalAmount.Text = "Total Sale Amount from [start date] to [end date]";
             // 
-            // label1
+            // txtTotalAmount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Đây là trang Sale Report with Range Date to Date";
+            this.txtTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAmount.Location = new System.Drawing.Point(507, 519);
+            this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.ReadOnly = true;
+            this.txtTotalAmount.Size = new System.Drawing.Size(170, 26);
+            this.txtTotalAmount.TabIndex = 8;
+            this.txtTotalAmount.Text = "0.00";
+            this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(75, 522);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(426, 20);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "Total Sale Amount between [date] and [date] l� = ";
             // 
             // SaleReportRangeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtTotalAmount);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.btnSearch);
@@ -218,9 +235,8 @@ namespace MobileShopProject.Controls
             this.Controls.Add(this.dtpStartDate);
             this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.label1);
             this.Name = "SaleReportRangeControl";
-            this.Size = new System.Drawing.Size(959, 681);
+            this.Size = new System.Drawing.Size(954, 631);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,6 +245,7 @@ namespace MobileShopProject.Controls
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTotalAmount;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

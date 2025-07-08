@@ -160,7 +160,5 @@ namespace MobileShopProject.Controls
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }
