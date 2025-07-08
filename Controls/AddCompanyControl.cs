@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using MobileShopProject.DataAccess;
 
 namespace MobileShopProject.Controls
 {
@@ -27,8 +27,7 @@ namespace MobileShopProject.Controls
         {
             try
             {
-                string sql = "SELECT ISNULL(MAX(CompId), 0) + 1 FROM Company";
-                int nextId = Convert.ToInt32(DbHelper.ExecuteScalar(sql));
+                int nextId = CompanyRepository.GetNextId();
                 txtCompanyID.Text = $"C{nextId}";
             }
             catch (Exception ex)
@@ -54,10 +53,11 @@ namespace MobileShopProject.Controls
                 return;
             }
 
-            string sql = "INSERT INTO Company (CompId, CompName) VALUES (@compId, @compName)";
-            int rows = DbHelper.ExecuteNonQuery(sql,
-                new SqlParameter("@compId", compId),
-                new SqlParameter("@compName", compName));
+            int rows = CompanyRepository.AddCompany(new CompanyRepository.Company
+            {
+                CompId = compId,
+                CompName = compName
+            });
 
             if (rows > 0)
             {

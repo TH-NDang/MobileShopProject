@@ -40,7 +40,7 @@ namespace MobileShopProject.Controls
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.ComboBox cmbModelNumber;
         private System.Windows.Forms.Label lblModelNumber;
-        private System.Windows.Forms.TextBox txtIMEI;
+        private System.Windows.Forms.ComboBox cmbIMEI;
         private System.Windows.Forms.Label lblIMEI;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblPrice;
@@ -63,7 +63,7 @@ namespace MobileShopProject.Controls
             this.lblModelNumber = new System.Windows.Forms.Label();
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
-            this.txtIMEI = new System.Windows.Forms.TextBox();
+            this.cmbIMEI = new System.Windows.Forms.ComboBox();
             this.lblIMEI = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -172,7 +172,7 @@ namespace MobileShopProject.Controls
             this.gbMobileDetails.Controls.Add(this.lblModelNumber);
             this.gbMobileDetails.Controls.Add(this.cmbCompanyName);
             this.gbMobileDetails.Controls.Add(this.lblCompanyName);
-            this.gbMobileDetails.Controls.Add(this.txtIMEI);
+            this.gbMobileDetails.Controls.Add(this.cmbIMEI);
             this.gbMobileDetails.Controls.Add(this.lblIMEI);
             this.gbMobileDetails.Controls.Add(this.txtPrice);
             this.gbMobileDetails.Controls.Add(this.lblPrice);
@@ -219,12 +219,12 @@ namespace MobileShopProject.Controls
             this.lblCompanyName.TabIndex = 0;
             this.lblCompanyName.Text = "Company Name:";
             // 
-            // txtIMEI
+            // cmbIMEI
             // 
-            this.txtIMEI.Location = new System.Drawing.Point(500, 20);
-            this.txtIMEI.Name = "txtIMEI";
-            this.txtIMEI.Size = new System.Drawing.Size(200, 22);
-            this.txtIMEI.TabIndex = 5;
+            this.cmbIMEI.Location = new System.Drawing.Point(500, 20);
+            this.cmbIMEI.Name = "cmbIMEI";
+            this.cmbIMEI.Size = new System.Drawing.Size(200, 22);
+            this.cmbIMEI.TabIndex = 5;
             // 
             // lblIMEI
             // 

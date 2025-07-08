@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobileShopProject.DataAccess;
 using System.Data.SqlClient;
+using MobileShopProject.DataAccess;
 
 
 namespace MobileShopProject.Controls
@@ -55,8 +56,7 @@ namespace MobileShopProject.Controls
         {
             try
             {
-                string sql = "SELECT CompId, CompName FROM Company ORDER BY CompName";
-                DataTable dt = DbHelper.ExecuteQuery(sql);
+                DataTable dt = CompanyRepository.GetCompanies();
 
                 cmbCompanyName.DisplayMember = "CompName";
                 cmbCompanyName.ValueMember = "CompId";

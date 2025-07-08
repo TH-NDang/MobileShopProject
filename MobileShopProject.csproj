@@ -140,6 +140,7 @@
     <Compile Include="Controls\ViewStockControl.Designer.cs">
       <DependentUpon>ViewStockControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\CompanyRepository.cs" />
     <Compile Include="DataAccess\DbHelper.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />
     <Compile Include="FogotPassword.cs">

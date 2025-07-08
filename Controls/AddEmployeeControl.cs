@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using MobileShopProject.DataAccess;
 using System.Data.SqlClient;
 
-
 namespace MobileShopProject.Controls
 {
     public partial class AddEmployeeControl : UserControl
@@ -34,15 +33,15 @@ namespace MobileShopProject.Controls
                 return;
             }
 
-            string sql = "INSERT INTO [User] (UserName, Pwd, EmployeeName, Address, MobileNo, Hint) " +
-                       "VALUES (@userName, @pwd, @employeeName, @address, @mobileNo, @hint)";
-            int rows = DbHelper.ExecuteNonQuery(sql,
-                new SqlParameter("@userName", txtUserName.Text),
-                new SqlParameter("@pwd", txtPassword.Text),
-                new SqlParameter("@employeeName", txtEmployeeName.Text),
-                new SqlParameter("@address", txtAddress.Text),
-                new SqlParameter("@mobileNo", txtMobile.Text),
-                new SqlParameter("@hint", txtHint.Text));
+            int rows = UserRepository.AddUser(new UserRepository.User
+            {
+                UserName = txtUserName.Text,
+                Pwd = txtPassword.Text,
+                EmployeeName = txtEmployeeName.Text,
+                Address = txtAddress.Text,
+                MobileNo = txtMobile.Text,
+                Hint = txtHint.Text
+            });
 
             if (rows > 0)
             {
