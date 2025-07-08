@@ -30,7 +30,6 @@ namespace MobileShopProject.Controls
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private System.Windows.Forms.Label lblModelNumber;
         private System.Windows.Forms.ComboBox cmbModelNumber;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblStockStatus;
 
         private void InitializeComponent()
@@ -39,11 +38,10 @@ namespace MobileShopProject.Controls
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.lblModelNumber = new System.Windows.Forms.Label();
             this.cmbModelNumber = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.lblStockStatus = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblStockAvalable = new System.Windows.Forms.Label();
-            this.txtStockAvalable = new System.Windows.Forms.TextBox();
+            this.lblStockAvailable = new System.Windows.Forms.Label();
+            this.tbStockAvailable = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCompanyName
@@ -76,21 +74,11 @@ namespace MobileShopProject.Controls
             // cmbModelNumber
             // 
             this.cmbModelNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModelNumber.Enabled = false;
             this.cmbModelNumber.FormattingEnabled = true;
             this.cmbModelNumber.Location = new System.Drawing.Point(217, 143);
             this.cmbModelNumber.Name = "cmbModelNumber";
             this.cmbModelNumber.Size = new System.Drawing.Size(206, 24);
             this.cmbModelNumber.TabIndex = 3;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(454, 126);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(105, 41);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // lblStockStatus
             // 
@@ -109,35 +97,29 @@ namespace MobileShopProject.Controls
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "View Stock";
             // 
-            // lblStockAvalable
+            // lblStockAvailable
             // 
-            this.lblStockAvalable.AutoSize = true;
-            this.lblStockAvalable.Location = new System.Drawing.Point(97, 186);
-            this.lblStockAvalable.Name = "lblStockAvalable";
-            this.lblStockAvalable.Size = new System.Drawing.Size(101, 16);
-            this.lblStockAvalable.TabIndex = 6;
-            this.lblStockAvalable.Text = "Stock Avalable:";
+            this.lblStockAvailable.AutoSize = true;
+            this.lblStockAvailable.Location = new System.Drawing.Point(95, 186);
+            this.lblStockAvailable.Name = "lblStockAvailable";
+            this.lblStockAvailable.Size = new System.Drawing.Size(104, 16);
+            this.lblStockAvailable.TabIndex = 6;
+            this.lblStockAvailable.Text = "Stock Available:";
             // 
-            // txtStockAvalable
+            // tbStockAvailable
             // 
-            this.txtStockAvalable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStockAvalable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockAvalable.Location = new System.Drawing.Point(217, 180);
-            this.txtStockAvalable.Name = "txtStockAvalable";
-            this.txtStockAvalable.ReadOnly = true;
-            this.txtStockAvalable.Size = new System.Drawing.Size(120, 26);
-            this.txtStockAvalable.TabIndex = 7;
-            this.txtStockAvalable.Text = "0.00";
-            this.txtStockAvalable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbStockAvailable.Location = new System.Drawing.Point(217, 186);
+            this.tbStockAvailable.Name = "tbStockAvailable";
+            this.tbStockAvailable.Size = new System.Drawing.Size(206, 22);
+            this.tbStockAvailable.TabIndex = 7;
             // 
             // ViewStockControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtStockAvalable);
-            this.Controls.Add(this.lblStockAvalable);
+            this.Controls.Add(this.tbStockAvailable);
+            this.Controls.Add(this.lblStockAvailable);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cmbModelNumber);
             this.Controls.Add(this.lblModelNumber);
             this.Controls.Add(this.cmbCompanyName);
@@ -152,7 +134,7 @@ namespace MobileShopProject.Controls
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblStockAvalable;
-        private System.Windows.Forms.TextBox txtStockAvalable;
+        private System.Windows.Forms.Label lblStockAvailable;
+        private System.Windows.Forms.TextBox tbStockAvailable;
     }
 }
