@@ -94,8 +94,9 @@ namespace MobileShopProject.Controls
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 35);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 
             // AddModelControl
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
