@@ -27,12 +27,12 @@ namespace MobileShopProject.Controls
         /// the contents of this method with the code editor.
         /// </summary>
         private System.Windows.Forms.Label lblCompanyName;
-        private System.Windows.Forms.Label lblMobileNumber;
+        private System.Windows.Forms.Label lblModelNumber;
         private System.Windows.Forms.Label lblIMEINumber;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblWarrantyDate;
         private System.Windows.Forms.ComboBox cmbCompanyName;
-        private System.Windows.Forms.TextBox txtMobileNumber;
+        private System.Windows.Forms.ComboBox cmbModelNumber;
         private System.Windows.Forms.TextBox txtIMEINumber;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.DateTimePicker dtpWarrantyDate;
@@ -41,12 +41,12 @@ namespace MobileShopProject.Controls
         private void InitializeComponent()
         {
             this.lblCompanyName = new System.Windows.Forms.Label();
-            this.lblMobileNumber = new System.Windows.Forms.Label();
+            this.lblModelNumber = new System.Windows.Forms.Label();
             this.lblIMEINumber = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblWarrantyDate = new System.Windows.Forms.Label();
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
-            this.txtMobileNumber = new System.Windows.Forms.TextBox();
+            this.cmbModelNumber = new System.Windows.Forms.ComboBox();
             this.txtIMEINumber = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.dtpWarrantyDate = new System.Windows.Forms.DateTimePicker();
@@ -61,13 +61,13 @@ namespace MobileShopProject.Controls
             this.lblCompanyName.TabIndex = 0;
             this.lblCompanyName.Text = "Company Name:";
 
-            // lblMobileNumber
-            this.lblMobileNumber.AutoSize = true;
-            this.lblMobileNumber.Location = new System.Drawing.Point(20, 70);
-            this.lblMobileNumber.Name = "lblMobileNumber";
-            this.lblMobileNumber.Size = new System.Drawing.Size(97, 16);
-            this.lblMobileNumber.TabIndex = 1;
-            this.lblMobileNumber.Text = "Mobile Number:";
+            // lblModelNumber
+            this.lblModelNumber.AutoSize = true;
+            this.lblModelNumber.Location = new System.Drawing.Point(20, 70);
+            this.lblModelNumber.Name = "lblModelNumber";
+            this.lblModelNumber.Size = new System.Drawing.Size(97, 16);
+            this.lblModelNumber.TabIndex = 1;
+            this.lblModelNumber.Text = "Model Number:";
 
             // lblIMEINumber
             this.lblIMEINumber.AutoSize = true;
@@ -101,11 +101,11 @@ namespace MobileShopProject.Controls
             this.cmbCompanyName.Size = new System.Drawing.Size(200, 24);
             this.cmbCompanyName.TabIndex = 5;
 
-            // txtMobileNumber
-            this.txtMobileNumber.Location = new System.Drawing.Point(150, 67);
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(200, 22);
-            this.txtMobileNumber.TabIndex = 6;
+            // cmbModelNumber
+            this.cmbModelNumber.Location = new System.Drawing.Point(150, 67);
+            this.cmbModelNumber.Name = "cmbModelNumber";
+            this.cmbModelNumber.Size = new System.Drawing.Size(200, 24);
+            this.cmbModelNumber.TabIndex = 6;
 
             // txtIMEINumber
             this.txtIMEINumber.Location = new System.Drawing.Point(150, 107);
@@ -133,6 +133,7 @@ namespace MobileShopProject.Controls
             this.btnInsert.TabIndex = 10;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 
             // AddMobileControl
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -141,12 +142,12 @@ namespace MobileShopProject.Controls
             this.Controls.Add(this.dtpWarrantyDate);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtIMEINumber);
-            this.Controls.Add(this.txtMobileNumber);
+            this.Controls.Add(this.cmbModelNumber);
             this.Controls.Add(this.cmbCompanyName);
             this.Controls.Add(this.lblWarrantyDate);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblIMEINumber);
-            this.Controls.Add(this.lblMobileNumber);
+            this.Controls.Add(this.lblModelNumber);
             this.Controls.Add(this.lblCompanyName);
             this.Name = "AddMobileControl";
             this.Size = new System.Drawing.Size(400, 290);
