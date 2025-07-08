@@ -97,10 +97,10 @@ namespace MobileShopProject.Controls
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAddress.Location = new System.Drawing.Point(120, 90);
+            this.txtAddress.Location = new System.Drawing.Point(141, 90);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(753, 50);
+            this.txtAddress.Size = new System.Drawing.Size(732, 50);
             this.txtAddress.TabIndex = 7;
             // 
             // lblAddress
@@ -132,9 +132,9 @@ namespace MobileShopProject.Controls
             // 
             // txtMobileNumber
             // 
-            this.txtMobileNumber.Location = new System.Drawing.Point(120, 50);
+            this.txtMobileNumber.Location = new System.Drawing.Point(141, 50);
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(200, 22);
+            this.txtMobileNumber.Size = new System.Drawing.Size(179, 22);
             this.txtMobileNumber.TabIndex = 3;
             // 
             // lblMobileNumber
@@ -150,9 +150,9 @@ namespace MobileShopProject.Controls
             // 
             this.txtCustomerName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustomerName.Location = new System.Drawing.Point(120, 20);
+            this.txtCustomerName.Location = new System.Drawing.Point(141, 20);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(753, 22);
+            this.txtCustomerName.Size = new System.Drawing.Size(732, 22);
             this.txtCustomerName.TabIndex = 1;
             // 
             // lblCustomerName
@@ -187,9 +187,9 @@ namespace MobileShopProject.Controls
             // 
             this.cmbModelNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelNumber.FormattingEnabled = true;
-            this.cmbModelNumber.Location = new System.Drawing.Point(120, 50);
+            this.cmbModelNumber.Location = new System.Drawing.Point(149, 50);
             this.cmbModelNumber.Name = "cmbModelNumber";
-            this.cmbModelNumber.Size = new System.Drawing.Size(200, 24);
+            this.cmbModelNumber.Size = new System.Drawing.Size(230, 24);
             this.cmbModelNumber.TabIndex = 3;
             // 
             // lblModelNumber
@@ -205,9 +205,9 @@ namespace MobileShopProject.Controls
             // 
             this.cmbCompanyName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCompanyName.FormattingEnabled = true;
-            this.cmbCompanyName.Location = new System.Drawing.Point(120, 20);
+            this.cmbCompanyName.Location = new System.Drawing.Point(149, 20);
             this.cmbCompanyName.Name = "cmbCompanyName";
-            this.cmbCompanyName.Size = new System.Drawing.Size(200, 24);
+            this.cmbCompanyName.Size = new System.Drawing.Size(230, 24);
             this.cmbCompanyName.TabIndex = 1;
             // 
             // lblCompanyName
@@ -221,15 +221,15 @@ namespace MobileShopProject.Controls
             // 
             // cmbIMEI
             // 
-            this.cmbIMEI.Location = new System.Drawing.Point(500, 20);
+            this.cmbIMEI.Location = new System.Drawing.Point(536, 21);
             this.cmbIMEI.Name = "cmbIMEI";
-            this.cmbIMEI.Size = new System.Drawing.Size(200, 22);
+            this.cmbIMEI.Size = new System.Drawing.Size(284, 24);
             this.cmbIMEI.TabIndex = 5;
             // 
             // lblIMEI
             // 
             this.lblIMEI.AutoSize = true;
-            this.lblIMEI.Location = new System.Drawing.Point(400, 23);
+            this.lblIMEI.Location = new System.Drawing.Point(426, 23);
             this.lblIMEI.Name = "lblIMEI";
             this.lblIMEI.Size = new System.Drawing.Size(87, 16);
             this.lblIMEI.TabIndex = 4;
@@ -237,17 +237,17 @@ namespace MobileShopProject.Controls
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(500, 50);
+            this.txtPrice.Location = new System.Drawing.Point(536, 51);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(200, 22);
+            this.txtPrice.Size = new System.Drawing.Size(284, 22);
             this.txtPrice.TabIndex = 7;
             this.txtPrice.Text = "0.00";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(400, 53);
+            this.lblPrice.Location = new System.Drawing.Point(426, 53);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(41, 16);
             this.lblPrice.TabIndex = 6;
@@ -261,6 +261,7 @@ namespace MobileShopProject.Controls
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblTotalAmountLabel
             // 
