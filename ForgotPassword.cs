@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MobileShopProject
 {
-    public partial class FogotPassword : Form
+    public partial class ForgotPassword : Form
     {
-        public FogotPassword()
+        public ForgotPassword()
         {
             InitializeComponent();
         }

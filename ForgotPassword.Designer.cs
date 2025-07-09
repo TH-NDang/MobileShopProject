@@ -1,6 +1,6 @@
 ﻿namespace MobileShopProject
 {
-    partial class FogotPassword
+    partial class ForgotPassword
     {
         /// <summary>
         /// Required designer variable.

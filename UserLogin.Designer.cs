@@ -52,9 +52,10 @@ namespace MobileShopProject
             // 
             // loginControl
             // 
+            this.loginControl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginControl.Location = new System.Drawing.Point(250, 150);
             this.loginControl.Name = "loginControl";
-            this.loginControl.Size = new System.Drawing.Size(300, 160);
+            this.loginControl.Size = new System.Drawing.Size(320, 200);
             this.loginControl.TabIndex = 3;
             // 
             // UserLogin
