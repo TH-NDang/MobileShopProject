@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -135,47 +135,105 @@ namespace MobileShopProject.Controls
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string getCustomerSql = "SELECT ISNULL(MAX(CustId), 0) + 1 FROM Customer";
-            int custId = Convert.ToInt32(DbHelper.ExecuteScalar(getCustomerSql));
-            string insertCustomerSql = @"
-                INSERT INTO Customer (CustId, CustName, MobileNo, MailId, Address) 
-                VALUES (@CustId, @CustName, @MobileNo, @MailId, @Address);";
-
-            DbHelper.ExecuteNonQuery(insertCustomerSql,
-                new SqlParameter("@CustId", custId),
-                new SqlParameter("@CustName", txtCustomerName.Text),
-                new SqlParameter("@MobileNo", txtMobileNumber.Text),
-                new SqlParameter("@MailId", txtEmail.Text),
-                new SqlParameter("@Address", txtAddress.Text));
-
-            string getSalesSql = "SELECT ISNULL(MAX(SalesId), 0) + 1 FROM Sales";
-            int salesId = Convert.ToInt32(DbHelper.ExecuteScalar(getSalesSql));
-            string insertSalesSql = @"
-                INSERT INTO Sales (SalesId, IMEINo, SalesDate, Price, CustId) 
-                VALUES (@SalesId, @IMEINo, @SalesDate, @Price, @CustId);";
-            int rowUpdateSales = DbHelper.ExecuteNonQuery(insertSalesSql,
-                new SqlParameter("@SalesId", salesId),
-                new SqlParameter("@IMEINo", cmbIMEI.SelectedValue),
-                new SqlParameter("@SalesDate", DateTime.Now),
-                new SqlParameter("@Price", txtPrice.Text),
-                new SqlParameter("@CustId", custId));
-
-            if (rowUpdateSales > 0)
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(txtCustomerName.Text) ||
+                string.IsNullOrWhiteSpace(txtMobileNumber.Text) ||
+                cmbCompanyName.SelectedItem == null ||
+                cmbModelNumber.SelectedItem == null ||
+                cmbIMEI.SelectedItem == null)
             {
-                MessageBox.Show("Bán hàng thành công.");
-                txtCustomerName.Clear();
-                txtMobileNumber.Clear();
-                txtEmail.Clear();
-                txtAddress.Clear();
-                txtPrice.Clear();
-                cmbIMEI.DataSource = null;
-                cmbModelNumber.DataSource = null;
-                cmbCompanyName.DataSource = null;
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin bắt buộc.", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+
+            // Show confirmation dialog
+            var confirmResult = MessageBox.Show("Xác nhận đơn hàng?", "Xác nhận",
+                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (confirmResult == DialogResult.Yes)
             {
-                MessageBox.Show("Bán hàng thất bại.");
+                // Show confirmation details form
+                using (var confirmForm = new ConfirmDetails(
+                    companyName: cmbCompanyName.Text,
+                    modelNumber: cmbModelNumber.Text,
+                    imei: cmbIMEI.Text,
+                    customerName: txtCustomerName.Text,
+                    customerContact: txtMobileNumber.Text,
+                    customerEmail: txtEmail.Text,
+                    price: decimal.Parse(txtPrice.Text),
+                    quantity: 1 // Assuming quantity is 1 for now
+                ))
+                {
+                    var result = confirmForm.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        SaveSale();
+                    }
+                }
             }
         }
+
+        private void SaveSale()
+        {
+            try
+            {
+                string getCustomerSql = "SELECT ISNULL(MAX(CustId), 0) + 1 FROM Customer";
+                int custId = Convert.ToInt32(DbHelper.ExecuteScalar(getCustomerSql));
+                string insertCustomerSql = @"
+                    INSERT INTO Customer (CustId, CustName, MobileNo, MailId, Address) 
+                    VALUES (@CustId, @CustName, @MobileNo, @MailId, @Address);";
+
+                DbHelper.ExecuteNonQuery(insertCustomerSql,
+                    new SqlParameter("@CustId", custId),
+                    new SqlParameter("@CustName", txtCustomerName.Text.Trim()),
+                    new SqlParameter("@MobileNo", txtMobileNumber.Text.Trim()),
+                    new SqlParameter("@MailId", txtEmail.Text.Trim()),
+                    new SqlParameter("@Address", txtAddress.Text.Trim()));
+
+                string getSalesSql = "SELECT ISNULL(MAX(SalesId), 0) + 1 FROM Sales";
+                int salesId = Convert.ToInt32(DbHelper.ExecuteScalar(getSalesSql));
+                string insertSalesSql = @"
+                    INSERT INTO Sales (SalesId, IMEINo, SalesDate, Price, CustId) 
+                    VALUES (@SalesId, @IMEINo, @SalesDate, @Price, @CustId);";
+
+                int rowUpdateSales = DbHelper.ExecuteNonQuery(insertSalesSql,
+                    new SqlParameter("@SalesId", salesId),
+                    new SqlParameter("@IMEINo", cmbIMEI.SelectedValue),
+                    new SqlParameter("@SalesDate", DateTime.Now),
+                    new SqlParameter("@Price", decimal.Parse(txtPrice.Text)),
+                    new SqlParameter("@CustId", custId));
+
+                if (rowUpdateSales > 0)
+                {
+                    MessageBox.Show("Bán hàng thành công.", "Thành công", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearForm();
+                }
+                else
+                {
+                    throw new Exception("Không thể lưu thông tin bán hàng.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu đơn hàng: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearForm()
+        {
+            txtCustomerName.Clear();
+            txtMobileNumber.Clear();
+            txtEmail.Clear();
+            txtAddress.Clear();
+            txtPrice.Clear();
+            cmbIMEI.DataSource = null;
+            cmbModelNumber.DataSource = null;
+            cmbCompanyName.DataSource = null;
+            LoadCompanies();
+        }
+        
     }
 }

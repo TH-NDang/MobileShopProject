@@ -143,11 +143,11 @@
     <Compile Include="DataAccess\CompanyRepository.cs" />
     <Compile Include="DataAccess\DbHelper.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />
-    <Compile Include="FogotPassword.cs">
+    <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FogotPassword.Designer.cs">
-      <DependentUpon>FogotPassword.cs</DependentUpon>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="UserHomePage.cs">
       <SubType>Form</SubType>
