@@ -31,8 +31,8 @@ namespace MobileShopProject
                 this.Show();
             }
             else
-                this.Close();
             {
+                this.Close();
             }
         }
 
